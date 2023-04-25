@@ -10,21 +10,11 @@ namespace StudentCRUD__Scaffolding.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+           systemCS _context = new systemCS();
+
+            var listofData = _context.students.ToList();
+            return View(listofData);
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }
